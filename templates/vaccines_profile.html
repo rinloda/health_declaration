@@ -1,0 +1,19 @@
+{% extends "_base.html" %}
+{% block content %}
+        <h1>Detail Information of {{vaccines.name_vaccine}} vaccine</h1>
+        <!-- <h2>All information of {{vaccines.name_vaccine}} vaccine we have so far:</h2> -->
+        <h4>Vaccine Name:</h4>
+            <p>{{vaccines.name_vaccine}}</p>
+        <h4>Company Name:</h4>
+            <p>{{vaccines.company_name}}</p>
+        <h4>Information:</h4>
+            <p>{{vaccines.information}}</p>
+        <h4>Side Effects:</h4>
+            <p>{{vaccines.side_effect}}</p>    
+
+
+        <!-- {% for user in users %}
+            <p>User name: {{user.user_firstname}} {{user.user_lastname}}</p>
+            
+        {% endfor %} -->
+{% endblock %}

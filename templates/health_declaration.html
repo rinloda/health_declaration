@@ -1,0 +1,41 @@
+{% extends "_base.html" %}
+{% block content %}
+<!-- Form for new Vaccine         -->
+<div class="formwrapper">
+    <h1 class="title"><span>Health Declaration</span></h1>
+    <form action="" method="POST" novalidate>
+        {{ form.hidden_tag()}}
+        <h3>
+            {{ form.first_name.label}} <br>
+            {{ form.first_name(size=25) }} <br>
+        </h3>
+        <h3>
+            {{ form.last_name.label}} <br>
+            {{ form.last_name(size=25) }} <br>
+        </h3>
+        <h3>
+            {{ form.phone.label}} <br>
+            {{ form.phone(size=25) }} <br>
+        </h3>
+        <h3>
+            {{ form.email.label}} <br>
+            {{ form.email(size=25) }} <br>
+            {% for error in form.email.errors %}        </h3>
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+
+        <h3>
+            {{ form.symptom.label}} <br>
+            {{ form.symptom(size=25) }} <br>
+        </h3>
+        <h3>
+            {{ form.get_vaccine.label}} <br>
+            {{ form.get_vaccine(size=25) }} <br>
+        </h3>         
+        
+        <h3>{{ form.submit_1() }}</h3>
+    </form>
+</div>
+
+
+{% endblock %}

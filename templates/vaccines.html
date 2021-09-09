@@ -1,0 +1,40 @@
+{% extends "_base.html" %}
+{% block content %}
+<h1 class="title"><span>Vaccine List</span></h1>
+
+<h2>Here is the list of those vaccines in the world:</h2>
+
+        <ul>
+        {% for vaccine in vaccines %}
+            <li class="link"><a href="{{ url_for('vaccines_profile', vaccine_id = vaccine.id )}}">Vaccine name: {{vaccine.name_vaccine}}<a href="{{url_for('remove_vaccine',  vaccine_id = vaccine.id)}}"> <span style="float:right"> Remove</span></a></a></li>
+
+            
+        {% endfor %}
+        </ul>
+
+<!-- Form for new Vaccine         -->
+<div class="formwrapper">
+    <h1 class="title"><span>Add Vaccine Info</span></h1>
+    <form action="" method="POST" novalidate>
+        {{ form.hidden_tag()}}
+        <h3>
+            {{ form.name.label}} <br>
+            {{ form.name(size=25) }} <br>
+        </h3>
+        <h3>
+            {{ form.company.label}} <br>
+            {{ form.company(size=25) }} <br>
+        </h3>
+        <h3>
+            {{ form.information.label}} <br>
+            {{ form.information(size=100) }} <br>
+        </h3>
+        <h3>
+            {{ form.side_effect.label}} <br>
+            {{ form.side_effect(size=100) }} <br>
+        </h3>
+        <h3>{{ form.submit() }}</h3>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "_base.html" %}
+{% block content %}
+{% if current_user.is_authenticated %}
+        <h1>Hello {{users.user_firstname}}</h1>
+        <h2>Here is your information</h2>
+        <p>Name: {{users.user_firstname}} {{users.user_lastname}}</p>
+        <!-- <p>Phone: {{users.phone_number}}</p> -->
+        <p>Email: {{users.email_user}}</p>
+        
+        <br> <br>
+        <p>Click here to logout: <a href="{{ url_for('logout_page') }}"> Logout </a></p>
+        <p>If you would like to delete the information and account, please click: <a href="{{ url_for('remove_user', user_id = users.id) }}">Delete Account</a></p>
+
+        
+{% endif %}
+{% endblock %}

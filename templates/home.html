@@ -1,0 +1,9 @@
+{% extends "_base.html" %}
+{% block content %}
+        <h1>Welcome to my test health declaration Web-app with Flask</h1>
+        <h2>All information of users we have so far:</h2>
+        {% for user in users %}
+            <p>User name: {{user.user_firstname}} {{user.user_lastname}}</p>
+            
+        {% endfor %}
+{% endblock %}
